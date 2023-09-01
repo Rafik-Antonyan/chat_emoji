@@ -28,13 +28,15 @@ module.exports.login = async (req, res, next) => {
     try {
         const { username, password } = req.body
 
-        const user = await User.findOne({ username })
-        if (!user) return res.json({ status: false, message: "Username wasn't defined." })
+        res.send(req.body)
 
-        const checkPassword = await bcrypt.compare(password, user.password)
-        if (!checkPassword) return res.json({ status: false, message: "Wrong password" })
+        // const user = await User.findOne({ username })
+        // if (!user) return res.json({ status: false, message: "Username wasn't defined." })
 
-        res.json({ status: true, user })
+        // const checkPassword = await bcrypt.compare(password, user.password)
+        // if (!checkPassword) return res.json({ status: false, message: "Wrong password" })
+
+        // res.json({ status: true, user })
     } catch (err) {
         next(err)
     }
