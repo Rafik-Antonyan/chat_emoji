@@ -15,7 +15,7 @@ app.use(express.json())
 
 app.use('/api/auth', userRoutes)
 app.use('/api/messages', messageRoutes)
-app.get("/", (req,res) => {
+app.get("/", (req, res) => {
     res.send("testing")
 })
 
@@ -54,3 +54,4 @@ io.on("connection", (socket) => {
         }
     })
 })
+module.exports = app
