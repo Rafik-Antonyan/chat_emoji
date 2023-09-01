@@ -1,6 +1,20 @@
 {
   "version": 2,
   "name": "chat_emoji",
-  "builds": [{ "src": "app.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/(.*)", "dest": "/app.js" }]
+  "builds": [
+    {
+      "src": "index.js", 
+      "use": "@vercel/node" 
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)", 
+      "dest": "index.js" 
+    }
+  ],
+  "env": {
+    "MONGO_URL": "mongodb+srv://rafikantonyan105:XX5NJ7I4SAp7eAPX@cluster0.jzrpvec.mongodb.net/chat",
+    "PORT": 5000
+  }
 }
