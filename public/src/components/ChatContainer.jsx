@@ -33,11 +33,7 @@ export const ChatContainer = ({ currentChat, currentUser, socket }) => {
       from: currentUser._id,
       msg,
     });
-    socket.current.broadcast.emit("send-msg", {
-      to: currentChat._id,
-      from: currentUser._id,
-      msg,
-    });
+
     const msgs = [...messages];
     msgs.push({ fromSelf: true, message: msg });
     setMessages(msgs);
