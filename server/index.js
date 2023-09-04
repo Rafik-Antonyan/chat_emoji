@@ -15,9 +15,6 @@ app.use(express.json())
 
 app.use('/api/auth', userRoutes)
 app.use('/api/messages', messageRoutes)
-app.get("/", (req, res) => {
-    res.send("testing")
-})
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -51,7 +48,6 @@ io.on("connection", (socket) => {
         const sendUserSocket = onlineUsers.get(data.to)
         if (sendUserSocket) {
             socket.to(sendUserSocket).emit('msg-recieve', data.msg)
-            socket.broadcast.emit('msg-recieve', data.msg);
         }
 
     })

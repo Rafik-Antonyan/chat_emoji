@@ -1,4 +1,4 @@
-export const host = "https://chat-emoji-9e20dpruj-rafik-antonyan.vercel.app"
+export const host = "http://localhost:5000"
 export const registrationRoute = `${host}/api/auth/register`
 export const loginRoute = `${host}/api/auth/login`
 export const setAvatarRoute = `${host}/api/auth/setAvatar`
